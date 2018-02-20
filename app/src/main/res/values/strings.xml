@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ViewModelAndLiveData</string>
+
+    <string name="current_sum_w_placeholder">Current sum: %d</string>
+
+    <string name="add_one">Add 1</string>
+    <string name="add_two">Add 2</string>
+</resources>
