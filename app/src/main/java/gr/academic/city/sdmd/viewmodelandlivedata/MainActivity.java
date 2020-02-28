@@ -1,15 +1,16 @@
 package gr.academic.city.sdmd.viewmodelandlivedata;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+public class MainActivity extends FragmentActivity {
 
     /**
      * ViewModel way
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnAddOne = findViewById(R.id.btn_add_one);
         Button btnAddTwo = findViewById(R.id.btn_add_two);
 
-        final MainViewModel model = ViewModelProviders.of(this).get(MainViewModel.class);
+        final MainViewModel model = new ViewModelProvider(this).get(MainViewModel.class);
         model.getSum().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer newSum) {
